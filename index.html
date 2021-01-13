@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>מחולל.ססמאות.בחירות.</title>
+    <style>
+      body {
+        background:   #43c3ec;
+        font-size: 20vh;
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="warpper">
+      <div class="word" id="word1"></div>
+      <div class="word" id="word2"></div>
+      <div class="word" id="word3"></div>
+    </div>
+  </body>
+  <script>
+    const words = ["ממלכתיות","יציבות","אחדות","דרך","יכולת","אומץ","תקווה","ביטחון","יושר"];
+    const selected = [];
+    for (let i=0; i< 3; i++) {
+      let index = Math.floor(Math.random() * words.length);
+      while (selected.includes(index)) {
+        index = Math.floor(Math.random() * words.length);
+      }
+      selected.push(index)
+    }
+    document.querySelector("#word1").innerHTML = `.${words[selected[0]]}`;
+    document.querySelector("#word2").innerHTML = `.${words[selected[1]]}`;
+    document.querySelector("#word3").innerHTML = `.${words[selected[2]]}`;
+  </script>
+</html>
